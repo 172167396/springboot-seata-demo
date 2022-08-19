@@ -1,0 +1,3 @@
+com\tcc\tcccommon\config\RedisCacheConfig.class
+com\tcc\tcccommon\utils\RedisUtil.class
+com\tcc\tcccommon\utils\ResultHolder.class
