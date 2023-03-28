@@ -1,6 +1,7 @@
 package cn.tedu.storage.service;
 
 import cn.tedu.storage.mapper.StorageMapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,6 @@ public class StorageATServiceImpl implements StorageService {
     StorageMapper storageMapper;
 
     @Override
-    @Transactional
     public void decrease(String productId, BigDecimal count) {
         storageMapper.decrease(productId, count);
     }

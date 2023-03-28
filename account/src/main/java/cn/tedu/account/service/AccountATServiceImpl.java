@@ -1,6 +1,7 @@
 package cn.tedu.account.service;
 
 import cn.tedu.account.mapper.AccountMapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class AccountATServiceImpl implements AccountService {
     @Override
     public void decrease(String userId, BigDecimal money) {
         accountMapper.decrease(userId, money);
+//        throw new RuntimeException("报错了");
     }
 
 }

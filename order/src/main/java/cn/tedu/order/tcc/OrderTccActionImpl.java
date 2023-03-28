@@ -27,7 +27,7 @@ public class OrderTccActionImpl implements OrderTccAction {
     public boolean prepareCreateOrder(BusinessActionContext businessActionContext, String orderId, String userId, String productId, BigDecimal count, BigDecimal money) {
         log.info("创建 order 第一阶段，预留资源 - " + businessActionContext.getXid());
 
-        Order order = new Order(orderId, userId, productId, count, money, 0);
+        Order order = new Order(orderId, userId, productId, count, money, 0,null);
         orderMapper.create(order);
 
         //事务成功，保存一个标识，供第二阶段进行判断

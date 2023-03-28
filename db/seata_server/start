@@ -1,1 +1,0 @@
-此demo使用seataio/seata-server:lastest版，使用nacos2.0.3注册中心，通过配置seata.mode=TCC或AT切换模式

@@ -13,22 +13,6 @@ CREATE TABLE `order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-DROP TABLE IF EXISTS `segment`;
-CREATE TABLE `segment` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
-  `VERSION` bigint NOT NULL DEFAULT '0' COMMENT '版本号',
-  `business_type` varchar(63) NOT NULL DEFAULT '' COMMENT '业务类型，唯一',
-  `max_id` bigint NOT NULL DEFAULT '0' COMMENT '当前最大id',
-  `step` int DEFAULT '0' COMMENT '步长',
-  `increment` int NOT NULL DEFAULT '1' COMMENT '每次id增量',
-  `remainder` int NOT NULL DEFAULT '0' COMMENT '余数',
-  `created_at` bigint unsigned NOT NULL COMMENT '创建时间',
-  `updated_at` bigint unsigned NOT NULL COMMENT '更新时间',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uniq_business_type` (`business_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='号段表';
-
-INSERT INTO `segment` VALUES ('1', '1', 'order_business', '1000', '1000', '1', '0', '20220118161721', '20220118161721');
 
 DROP TABLE IF EXISTS `undo_log`;
 CREATE TABLE `undo_log` (

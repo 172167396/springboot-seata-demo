@@ -1,6 +1,7 @@
 package cn.tedu.order.entity;
 
 import lombok.*;
+import org.springframework.data.annotation.Transient;
 
 import java.math.BigDecimal;
 
@@ -15,4 +16,8 @@ public class Order {
     private BigDecimal count;
     private BigDecimal money;
     private int status;
+
+    @Transient
+    private BigDecimal calcMoney;
+
 }

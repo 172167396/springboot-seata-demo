@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: info
+    cn.tedu: debug
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+seata:
+  mode: AT
